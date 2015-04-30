@@ -1,0 +1,17 @@
+# npm
+node_modules
+npm-debug.log
+
+# bower
+bower_components
+
+# mac os x
+.DS_Store
+
+# IDE
+.idea
+
+target
+
+
+
