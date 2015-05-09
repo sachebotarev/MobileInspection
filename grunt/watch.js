@@ -1,10 +1,11 @@
 module.exports = {
-    livereload: {
+    webapp: {
         options: {
             livereload: true
         },
         files: [
             "<%= dir.webapp %>/**"
-        ]
+        ],
+        tasks: ["eslint"]
     }
 };

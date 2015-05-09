@@ -1,3 +1,7 @@
-module.exports = {
-        dist: "<%= dir.dist %>/"
+module.exports = function(grunt, config){
+    return {
+        dist: {
+            src: ['<%= dir.dist %>/']
+        }
+    };
 };
