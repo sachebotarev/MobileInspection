@@ -1,1 +1,1 @@
-jQuery.sap.require('');
+jQuery.sap.declare('')
