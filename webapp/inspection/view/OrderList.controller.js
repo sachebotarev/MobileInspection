@@ -1,4 +1,4 @@
-sap.ui.controller('sciener.m.inspection.view.Order',{
+sap.ui.controller('sciener.m.inspection.view.OrderList',{
     onInit: function(){
 
     },
