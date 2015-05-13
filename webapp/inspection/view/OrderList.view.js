@@ -18,14 +18,43 @@ sap.ui.jsview('sciener.m.inspection.view.OrderList',{
             select:[oController.handleSelectOrder, oController]
         });
 
+        var oMenuButton = new sap.m.Button({
+            icon: "sap-icon://menu2",
+            press: [oController.handleShowMainActionSheet,oController]
+        });
 
         var oFooter = new sap.m.Bar({
-
+            contentLeft: [
+                oMenuButton,
+                new sap.m.Button("idUpload",{
+                    icon: "sap-icon://alert"
+                }),
+                new sap.m.Button("idLogout",{
+                    icon: "sap-icon://log",
+                    press: [oController.handleLogout,oController]
+                })
+            ]
         });
 
 
-        var oOrderListPage = sap.m.Page("idOrderListPage", {
-            title: "{i18n>TITLE_ORDER_LIST}",
+
+        var oOrderListHeader = new sap.m.Bar({
+            contentMiddle: [
+
+                new sap.m.SearchField()
+
+            ],
+            contentRight:[
+                new sap.m.Button("idBarcode",{
+                    icon: "sap-icon://bar-code"
+                })
+
+            ]
+        });
+
+
+        var oOrderListPage = new sap.m.Page("idOrderListPage", {
+            customHeader: oOrderListHeader,
             content: [
                 oOrderList
             ],

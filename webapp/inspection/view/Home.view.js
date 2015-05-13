@@ -4,9 +4,32 @@ sap.ui.jsview('sciener.m.inspection.view.Home', {
         return 'sciener.m.inspection.view.Home';
     },
 
-    createContent: function (oContraller) {
+    createContent: function (oController) {
         'use strict';
         this.setDisplayBlock(true);
-        return new sap.m.Button({text: "Home"});
+        var oUserButton = new sap.m.Button(this.createId("idHomeUserButton"),{
+            text: "User",
+            icon: "sap-icon://employee",
+            press: [oController.handleShowUserInfo, oController]
+        });
+        var oAppNameText = new sap.m.Label({
+            text: "{i18n>TITLE_APPLICATION_NAME}"
+        });
+        var oHeader = new sap.m.Bar(this.createId("idHomeHeader"),{
+            contentRight: [
+                oUserButton
+            ],
+            contentMiddle:[
+                oAppNameText
+            ]
+        });
+        var oFooter = new  sap.m.Bar(this.createId("idHomeFooter"), {});
+        var oPage =  new sap.m.Page(this.createId("idHomePage"), {
+
+            customHeader: oHeader,
+            footer: oFooter,
+            content:[]
+        });
+        return oPage;
     }
 });

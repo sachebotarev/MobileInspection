@@ -63,6 +63,7 @@ sciener.m.inspection.Component.prototype.init = function() {
     i18nModel = new sap.ui.model.resource.ResourceModel({
        bundleName: "sciener.m.inspection.i18n.messageBundle"
     });
+    this.setModel(sap.ui.getCore().getModel("setting"), "setting");
     this.setModel(i18nModel,"i18n");
     this.getRouter().initialize();
 };
