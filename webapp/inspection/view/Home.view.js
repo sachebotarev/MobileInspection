@@ -1,11 +1,11 @@
 sap.ui.jsview('sciener.m.inspection.view.Home', {
     getControllerName: function () {
-        'use strict';
+        "use strict";
         return 'sciener.m.inspection.view.Home';
     },
 
     createContent: function (oController) {
-        'use strict';
+        "use strict";
         this.setDisplayBlock(true);
         var oUserButton = new sap.m.Button(this.createId("idHomeUserButton"),{
             text: "User",

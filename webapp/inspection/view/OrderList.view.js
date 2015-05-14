@@ -1,11 +1,11 @@
 sap.ui.jsview('sciener.m.inspection.view.OrderList',{
     getControllerName: function(){
-        'use strict';
+        "use strict";
         return 'sciener.m.inspection.view.OrderList';
     },
 
     createContent: function(oController){
-        'use strict';
+        "use strict";
         var oOrderListTemplates = new sap.m.ObjectListItem({
 
         });

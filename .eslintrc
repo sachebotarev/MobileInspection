@@ -5,7 +5,8 @@
   "globals": {
     "sap": true,
     "jQuery": true,
-    "sciener": true
+    "sciener": true,
+    "module": true
   },
   "plugins": [
     "openui5"

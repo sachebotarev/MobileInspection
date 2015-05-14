@@ -4,5 +4,6 @@ module.exports = {
     'serve': ['open:darwin', 'openui5_connect:dist' ],
     'clear':[
         'clean'
-    ]
+    ],
+    'lint':['eslint']
 };

@@ -1,17 +1,17 @@
 sap.ui.controller('sciener.m.inspection.view.OrderList',{
     onInit: function(){
-
+        "use strict";
     },
     onBeforeRendering: function(){
-
+        "use strict";
     },
 
     onAfterRendering: function(){
-
+        "use strict";
     },
 
     onExit: function(){
-
+        "use strict";
     },
 
     handleShowMainActionSheet: function(oEvent){
@@ -30,6 +30,7 @@ sap.ui.controller('sciener.m.inspection.view.OrderList',{
     },
 
     handleLogout: function(){
+        "use strict";
         var eventBus = sap.ui.getCore().getEventBus();
         eventBus.publish("logon", "logout");
     }

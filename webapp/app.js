@@ -1,8 +1,9 @@
 (function(){
-    var component = new Object();
+    "use strict";
+    var component = {};
 
     function createComponent( name ){
-        component[name] = component[name]|| new sap.ui.core.ComponentContainer({
+        component[name] = component[name] || new sap.ui.core.ComponentContainer({
             height: "100%",
             name: name
         });
@@ -19,16 +20,16 @@
         });
         var log = createComponent("sciener.m.logon");
         sap.ui.getCore().setModel(model, "setting");
-        var oShell= new sap.m.Shell().setApp(log).placeAt("root");
+        var oShell = new sap.m.Shell().setApp(log).placeAt("root");
 
         var eventBus = sap.ui.getCore().getEventBus();
+
         eventBus.subscribe("logon", "login", function(){
             oShell.setApp(createComponent("sciener.m.inspection")).placeAt("root");
         }, this);
+
         eventBus.subscribe("logon", "logout", function(){
             oShell.setApp(log).placeAt("root");
         }, this);
     });
-
-
 })();
