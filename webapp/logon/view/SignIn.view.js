@@ -1,7 +1,7 @@
-sap.ui.jsview('sciener.m.logon.view.Logon',{
+sap.ui.jsview('sciener.m.logon.view.SignIn',{
     getControllerName: function(){
         "use strict";
-        return 'sciener.m.logon.view.Logon';
+        return 'sciener.m.logon.view.SignIn';
     },
 
     createContent: function(oController){
@@ -50,7 +50,7 @@ sap.ui.jsview('sciener.m.logon.view.Logon',{
         });
         var oFooter =  new sap.m.Bar("idFooter", {
             contentLeft:[
-                oSettingBtn
+                //oSettingBtn
             ],
             contentRight:[
                 oLogoImg
@@ -103,8 +103,21 @@ sap.ui.jsview('sciener.m.logon.view.Logon',{
                 items:[ oPanel ]
             });
 
+        var oTitle = new sap.m.Label({
+            text: "{setting>/title}"
+        });
+
+        var oHeader = new sap.m.Bar({
+           contentRight: [
+               oSettingBtn
+           ],
+            contentMiddle: [
+                oTitle
+            ]
+        });
+
         var oPage =  new sap.m.Page({
-            title: "{setting>/title}",
+            customHeader: oHeader,
             content: [
                 oRowFlex
             ],

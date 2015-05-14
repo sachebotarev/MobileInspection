@@ -12,5 +12,9 @@ sap.ui.controller('sciener.m.logon.view.Setting',{
 
     onExit: function(){
         "use strict";
+    },
+
+    handleBack: function(oEvent){
+        sap.ui.core.UIComponent.getRouterFor(this).navTo("logon",{});
     }
 });

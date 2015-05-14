@@ -11,25 +11,39 @@ sap.ui.core.UIComponent.extend("sciener.m.logon.Component", {
         },
         routing:{
             config:{
+                routerClass: "sap.m.routing.Router",
                 viewType : "JS",
                 viewPath : "sciener.m.logon.view",
-                targetControl: "idLogonApp",
-                targetAggregation : "pages",
-                clearTarget : false
+                controlId: "idLogonApp",
+                transition: "slide",
+                bypassed: {
+                    target: ["signInView"]
+                }
             },
             routes:[
                 {
-                    name: "logon",
-                    pattern: "",
-                    view: "Logon"
-
-                },
-                {
                     name: "setting",
                     pattern: "setting",
-                    view: "Setting"
+                    target: ["settingView"]
+                },
+                {
+                    name: "logon",
+                    pattern: "",
+                    target: ["signInView"]
                 }
-            ]
+            ],
+            targets: {
+                signInView: {
+                    viewName: "SignIn",
+                    viewLevel: 0,
+                    controlAggregation: "pages"
+                },
+                settingView: {
+                    viewName: "Setting",
+                    viewLevel: 0,
+                    controlAggregation: "pages"
+                }
+            }
         }
     }
 
@@ -51,7 +65,7 @@ sciener.m.logon.Component.prototype.init = function() {
 sciener.m.logon.Component.prototype.createContent = function(){
     "use strict";
     return sap.ui.view({
-        id: "idMainLogonView",
+        id: this.createId("idMainLogonView"),
         type: sap.ui.core.mvc.ViewType.JS,
         viewName: "sciener.m.logon.view.Main"
     });

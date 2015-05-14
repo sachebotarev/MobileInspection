@@ -1,4 +1,4 @@
-sap.ui.controller('sciener.m.logon.view.Logon',{
+sap.ui.controller('sciener.m.logon.view.SignIn',{
     onInit: function(){
         "use strict";
     },
@@ -18,5 +18,9 @@ sap.ui.controller('sciener.m.logon.view.Logon',{
         "use strict";
         var eventBus = sap.ui.getCore().getEventBus();
         eventBus.publish("logon", "login");
+    },
+
+    handleSettingNav: function(oEvent){
+        sap.ui.core.UIComponent.getRouterFor(this).navTo("setting",{});
     }
 });
