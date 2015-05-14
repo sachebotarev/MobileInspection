@@ -1,9 +1,9 @@
 # npm
-node_modules
+node_modules/
 npm-debug.log
 
 # bower
-bower_components
+bower_components/
 
 # mac os x
 .DS_Store
@@ -12,7 +12,7 @@ bower_components
 # IDE
 .idea
 
-dist
+dist/
 
 
 

@@ -8,8 +8,13 @@
   },
   "keywords": [
     "inspection",
-    "openui5"
+    "openui5",
+    "mobile"
   ],
+  "repository":{
+    "type": "git",
+    "url": "https://github.com/sachebotarev/MobileInspection.git"
+  },
   "author": "Sergey A. Chebotarev",
   "license": "MIT",
   "devDependencies": {
